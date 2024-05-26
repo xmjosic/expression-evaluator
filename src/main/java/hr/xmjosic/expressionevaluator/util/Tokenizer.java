@@ -63,18 +63,6 @@ public class Tokenizer {
           retVal.add(tokenMap.get(token));
           continue;
         }
-        if ("and".equalsIgnoreCase(token)) {
-          retVal.add(TokenType.AND);
-          continue;
-        }
-        if ("or".equalsIgnoreCase(token)) {
-          retVal.add(TokenType.OR);
-          continue;
-        }
-        if ("not".equalsIgnoreCase(token)) {
-          retVal.add(TokenType.NOT);
-          continue;
-        }
         if (token.startsWith("\"") && token.endsWith("\"")) {
           retVal.add(token.substring(1, token.length() - 1));
           continue;
@@ -97,6 +85,12 @@ public class Tokenizer {
     return retVal;
   }
 
+  /**
+   * Replaces letter logical operators in the input string with their corresponding code values.
+   *
+   * @param input the input string to be processed
+   * @return the input string with letter logical operators replaced by code values
+   */
   private String replaceLetterLogicalOperators(String input) {
     String retVal = input;
     if (StringUtils.startsWithIgnoreCase(retVal, "not ")
