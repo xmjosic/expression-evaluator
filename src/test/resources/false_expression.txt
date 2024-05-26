@@ -1,0 +1,1 @@
+NOT(customer.address.zipCode <= 1235 AND customer.salary == 99) OR NOT(customer.firstName == "JOHN" && customer.salary < 100)
